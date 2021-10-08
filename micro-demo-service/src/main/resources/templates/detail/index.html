@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+	<a href="/" style="text-decoration: none"><h1 th:text="${name}">
+		</h1></a>
+<form action="/purchase"  method="post" th:object="${purchaseProduct}">
+	<div style="align: center; width: 100%; height: 100%">
+		<div style="align: center; width: 100%; height: 100%">
+			<div style="float: left">
+				<img th:src=${product.productImg} width=400 height=400></img>
+			</div>
+			<div style="float: left; margin-left: 20px;">
+				<div style="font-size: 26px; margin-top: 20px;">
+					 product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[${product.productName}]] </div>
+				<div style="font-size: 26px; margin-top: 20px;">
+					supplier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[${product.supplier}]]
+				</div>
+				<div style="font-size: 26px; margin-top: 20px;width:600px;">
+					desc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  style="font-size:16px;">[[${product.productDesc}]]</span>
+				</div>
+		 	<div style="font-size: 26px; margin-top: 20px;">
+					Please select a mailing address <select  name="region" >
+						<!-- <option value="0">Please select a location</option> -->
+						<option th:each="vregion: ${regionList}" th:text="${vregion}"
+							th:selected="${region==vregion}" th:name="${vregion}"></option>
+					</select>
+				</div> 
+				<div style="font-size: 26px; margin-top: 20px;">
+				   <input type="hidden" name="productName" th:value="${product.productName}" /></div>
+				 
+				 <input class="b_button" type="submit" value="&nbsp;&nbsp;buy&nbsp;&nbsp;" />
+					<!-- <a
+						th:href="@{/purchase(productName=${product.productName},supplier=${product.supplier},productImg=${product.productImg},region=${product.region})}">buy</a>
+			 -->	</div>
+			</div>
+
+</form>
+
+		</div>
+</body>
+</html>

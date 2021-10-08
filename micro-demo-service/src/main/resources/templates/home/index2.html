@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 
+<h1 th:text="${name}"></h1>
+
+<div th:each="u:${strings}">
+    <div th:text="${u}"></div>
+</div>
+<ul>  
+    <li  th:each="product : ${productList}" th:text="|姓名：${product.productName} ，年龄：  ${product.supplier}|">
+    <img src=@{${product.productImg}}})
+    </li>  
+</ul> 
+<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<table class="table table-bordered">
+					<thead>
+						<th>序号</th>
+						<th>用户名</th>
+						<th>性别</th>
+						<th>年龄</th>
+					</thead>
+					<tbody>
+						<tr th:each="product,userStat : ${productList}">
+							<td th:text="${userStat.index+1}">序号</td>
+							<td th:text="${product.supplier}">用户名</td>
+							<td th:text="${product.productName}">性别</td>
+							<td th:text="${product.productImg}">年龄</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+ 
+</body>
+</html>
+ 

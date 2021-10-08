@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+	<a href="/" style="text-decoration: none"><h1 th:text="${name}">
+		</h1></a>
+
+	<div style="align: center; width: 100%; height: 100%">
+		<div style="align: center; width: 100%; height: 100%">
+			<div style="float: left">
+				<img th:src=${product.productImg} width=400  height=400></img>
+			</div>
+			<div style="float: left; margin-left: 20px;">
+				<div style="font-size: 26px; margin-top: 20px;">
+					product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[${product.productName}]]</div>
+				<div style="font-size: 26px; margin-top: 20px;">
+					supplier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[${product.supplier}]]
+				</div>
+				<div style="font-size: 26px; margin-top: 20px;">
+					region&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[${product.region}]]
+				</div>
+				 
+			</div>
+
+
+
+		</div>
+</body>
+</html>

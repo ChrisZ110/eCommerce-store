@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 
+<h1 th:text="${name}"></h1>
+<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<table class="table table-bordered">
+					<thead>
+					 
+					</thead>
+					<tbody>
+						<tr th:each="product: ${productList}">
+						<td>
+						</td>
+							 
+							<td th:text="${product.supplier}">用户名</td>
+							<td th:text="${product.productName}">性别</td>
+							<td ><img  th:src="${product.productImg}" width=300,height=300></img></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+ <!--显示分类下的商品列表信息-->
+            <div style="width:790px;height:450px;">
+                <div th:each="goodsOne:${productList}" style="width:250px;height:100px;float: left;background:#eeeeee;margin-left:10px;margin-top:10px;">
+                      <div><img th:src=${goodsOne.productImg} width=300,height=300></img></div>
+                    <div>product:[[${goodsOne.productName}]]</div>
+                     <div>supplier:[[${goodsOne.supplier}]]</div>
+                </div>
+            </div>
+        </div>
+ 
+</body>
+</html>
+ 
